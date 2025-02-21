@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is visible.
+  </div>
+
+  <script>
+    // Check if the element exists before trying to modify it. If it doesn't, create it first.
+    let div2 = document.getElementById("myDiv2");
+    if (!div2) {
+      div2 = document.createElement("div");
+      div2.id = "myDiv2";
+      document.body.appendChild(div2);
+    }
+    div2.innerHTML = "This text is visible after the check.";
+  </script>
+</body>
+</html>
